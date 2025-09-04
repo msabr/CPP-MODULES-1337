@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 00:36:07 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/01 23:03:47 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/04 15:48:11 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ bool isNumber(const std::string& str) {
 	return (true);
 }
 
+int ft_stoi(const std::string& str)
+{
+	int i = 0;
+	int res = 0;
+
+	while (str[i])
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	return (res);
+}
+
 void PhoneBook::searchContact() const 
 {
 
@@ -64,7 +77,7 @@ void PhoneBook::searchContact() const
 	}
 	
     int index;
-	index = std::stoi(input);
+	index = ft_stoi(input);
 	if (index < 0 || index >= total) {
 		std::cout << "Invalid index. Out of range." << std::endl;
 		return;
