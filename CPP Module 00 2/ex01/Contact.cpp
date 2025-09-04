@@ -6,24 +6,11 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 00:36:13 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/04 00:15:12 by msabr            ###   ########.fr       */
+/*   Updated: 2025/06/29 11:48:51 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-bool isPrintable(std::string& str) 
-{
-	int i = 0;
-
-	while (str[i]) 
-	{
-		if (!isprint(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
-}
 
 void Contact::setInfo() {
 	do {
@@ -33,7 +20,7 @@ void Contact::setInfo() {
 			std::cout << "Error reading input. Goodbay" << std::endl;
 			exit(1);
 		}
-	} while (firstName.empty() || !isPrintable(firstName));
+	} while (firstName.empty());
 	do {
 		std::cout << "Enter Last Name: ";
 		if (!std::getline(std::cin, lastName))
@@ -41,7 +28,7 @@ void Contact::setInfo() {
 			std::cout << "Error reading input. Goodbay" << std::endl;
 			exit(1);
 		}
-	} while (lastName.empty() || !isPrintable(lastName));
+	} while (lastName.empty());
 	do {
 		std::cout << "Enter Nickname: ";
 		if (!std::getline(std::cin, nickname))
@@ -49,7 +36,7 @@ void Contact::setInfo() {
 			std::cout << "Error reading input. Goodbay" << std::endl;
 			exit(1);
 		}
-	} while (nickname.empty() || !isPrintable(nickname));
+	} while (nickname.empty());
 	do {
 		std::cout << "Enter Phone Number: ";
 		if (!std::getline(std::cin, phoneNumber))
@@ -57,7 +44,7 @@ void Contact::setInfo() {
 			std::cout << "Error reading input. Goodbay" << std::endl;
 			exit(1);
 		}
-	} while (phoneNumber.empty() || !isPrintable(phoneNumber) || !isNumber(phoneNumber));
+	} while (phoneNumber.empty());
 	do {
 		std::cout << "Enter Darkest Secret: ";
 		if (!std::getline(std::cin, darkestSecret))
@@ -65,7 +52,7 @@ void Contact::setInfo() {
 			std::cout << "Error reading input. Goodbay" << std::endl;
 			exit(1);
 		}
-	} while (darkestSecret.empty() || !isPrintable(darkestSecret));
+	} while (darkestSecret.empty());
 }
 
 
@@ -89,3 +76,4 @@ void Contact::displayFull() const {
 			  << "Phone Number: " << phoneNumber << std::endl
 			  << "Darkest Secret: " << darkestSecret << std::endl;
 }
+

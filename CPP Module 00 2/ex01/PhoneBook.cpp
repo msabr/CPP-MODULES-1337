@@ -6,11 +6,12 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 00:36:07 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/01 23:03:47 by msabr            ###   ########.fr       */
+/*   Updated: 2025/08/04 04:19:38 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
 
 PhoneBook::PhoneBook() : total(0), next(0) {}
 
@@ -29,44 +30,31 @@ static void printHeader() {
 	std::cout << std::right << std::string(44, '-') << std::endl;
 }
 
-bool isNumber(const std::string& str) {
-	int i = 0;
-	while (str[i]) {
-		if (!isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
-}
-
-void PhoneBook::searchContact() const 
-{
-
+void PhoneBook::searchContact() const {
 	printHeader();
 	if (total == 0) {
 		std::cout << std::setw(30) << "PhoneBook is empty.\n" << std::endl;
 		return;
 	}
+	
 	for (int i = 0; i < total; i++){
 		contacts[i].displayRow(i);	
 	}
-	
 	std::string input;
+    int index;
 	do{
 		std::cout << "Enter index (0 to " << total - 1 << "): ";
 		if (!std::getline(std::cin, input)) {
 			return;
 		}
 	} while (input.empty());
-	if (!isNumber(input)) {
-		std::cout << "Invalid input. Not a number." << std::endl;
+	if (!isdigit(input[0]) && input[0] == '+' && input[0] == '-') {
+		std::cout << "Invalid input. Please enter a number." << std::endl;
 		return;
 	}
-	
-    int index;
-	index = std::stoi(input);
+	index = std::atoi(input.c_str());
 	if (index < 0 || index >= total) {
-		std::cout << "Invalid index. Out of range." << std::endl;
+		std::cout << "Invalid index. Please try again." << std::endl;
 		return;
 	}
 	contacts[index].displayFull();

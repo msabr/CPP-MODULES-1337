@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/29 00:11:47 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/01 22:30:01 by msabr            ###   ########.fr       */
+/*   Created: 2025/06/29 00:43:54 by msabr             #+#    #+#             */
+/*   Updated: 2025/06/29 11:52:14 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-int main(int argc, char **argv)
+#include "Contact.hpp"
+
+class PhoneBook 
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			for (int j = 0; argv[i][j]; j++)
-			{
-				std::cout << (char)(std::toupper(argv[i][j]));
-			}
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+	private:
+		Contact contacts[MAX_CONTACTS];
+		int total;
+		int next;
+
+	public:
+		PhoneBook();
+		void addContact();
+		void searchContact() const;
+	};
+
+#endif  // PHONEBOOK_HPP

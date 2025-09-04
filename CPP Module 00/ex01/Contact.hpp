@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 00:44:09 by msabr             #+#    #+#             */
-/*   Updated: 2025/06/29 03:19:02 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/04 00:14:42 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ class Contact {
 		void	displayRow(int row) const;
 };
 
-#endif // CONTACT_HPP
+bool isPrintable(std::string& str);
+bool isNumber(const std::string& str);
+
+#endif //CONTACT_HPP
