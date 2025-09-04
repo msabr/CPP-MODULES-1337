@@ -1,4 +1,4 @@
-# C++ Module 00 - README
+# C++ Module 00
 
 **Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff**
 
@@ -246,7 +246,7 @@ ex02/
 
 ### Compilation
 ```bash
-c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program_name
+make
 ```
 
 ### Naming Conventions
@@ -299,17 +299,3 @@ c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program_name
 - String class: `std::string`
 - I/O manipulation: `<iomanip>` header
 - Input/Output: `<iostream>` header
-
-## 🚀 Next Steps
-
-After completing Module 00, you'll have a solid foundation in:
-- Basic C++ syntax and OOP concepts
-- Class design and implementation
-- Proper const usage
-- C++ I/O streams
-
-This prepares you for Module 01, which will introduce more advanced OOP concepts like dynamic memory allocation, references, and pointers to members.
-
----
-
-**Remember:** The goal is to learn, not just to complete. Take time to understand each concept thoroughly. The foundation you build here will be crucial for all future C++ modules!
