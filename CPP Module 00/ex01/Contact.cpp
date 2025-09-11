@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 00:36:13 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/04 00:15:12 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/08 23:52:04 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,18 @@ void Contact::setInfo() {
 	} while (darkestSecret.empty() || !isPrintable(darkestSecret));
 }
 
+static std::string addDot(std::string s) {
+	std::string res;
+
+	for (int i = 0; i < MAX_CASES - 1; i++)
+		res += s[i];
+	res += '.';
+	return (res);
+}
 
 static std::string format(std::string s) {
 	if (s.length() > MAX_CASES)
-		return (s.substr(0, 9) + ".");
+		return (addDot(s));
 	return (s);
 }
 
