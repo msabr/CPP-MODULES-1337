@@ -1,14 +1,14 @@
-NAME = Harl
+NAME = Fixed
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++
 
-SRC = main.cpp Harl.cpp
+SRC = main.cpp Fixed.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-HEADERS = Harl.hpp
+HEADERS = Fixed.hpp
 
 all: $(NAME)
 

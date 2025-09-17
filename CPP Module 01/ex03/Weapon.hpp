@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 04:04:50 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/09 06:24:18 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/17 17:41:48 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Weapon{
 	private:
 		std::string type;
 	public:
-		const std::string& getType(void);
-		void setType(std::string t);
 		Weapon(std::string t);
 		~Weapon(void);
+		const std::string&	getType(void);
+		void				setType(std::string t);
 };
 
 #endif

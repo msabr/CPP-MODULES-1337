@@ -1,4 +1,4 @@
-NAME = hordeZombies
+NAME = HordeZombies
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

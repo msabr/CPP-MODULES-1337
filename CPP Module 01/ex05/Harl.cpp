@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 07:08:47 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/09 08:07:51 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/17 18:42:49 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,22 @@ Harl::~Harl(void) {}
 
 void Harl::debug(void){
 	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "debug message" << std::endl;
 }
 
 void Harl::info(void){
 	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "info message" << std::endl;
 }
 
 void Harl::warning(void){
 	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "warning message" << std::endl;
 }
 
 void Harl::error(void){
 	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << "error message" << std::endl;
 }
 
 void Harl::complain(std::string level){

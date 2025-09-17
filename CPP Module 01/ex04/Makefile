@@ -1,4 +1,4 @@
-NAME = replace
+NAME = Replace
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

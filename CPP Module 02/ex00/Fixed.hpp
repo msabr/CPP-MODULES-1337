@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 04:28:16 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/17 17:42:31 by msabr            ###   ########.fr       */
+/*   Created: 2025/09/13 08:37:45 by msabr             #+#    #+#             */
+/*   Updated: 2025/09/14 21:33:59 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-void HumanA::attack(void){
-	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
-}
+class Fixed {
+	private:
+		int rawBits;
+		static const int fractionalBits;
+	public:
+		Fixed(); // Default constructor
+		Fixed(const Fixed &other); // Copy constructor
+		Fixed &operator=(const Fixed &other); // Copy assignment operator
+		~Fixed(); // Destructor
 
-HumanA::HumanA(std::string name, Weapon& weapon): name(name), weapon(weapon) {}
+		int		getRawBits() const;
+		void	setRawBits(int const raw);
+};
 
-HumanA::~HumanA(void) {}
+#endif
