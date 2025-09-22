@@ -1,14 +1,14 @@
-NAME = FixedPoint
+NAME = FragTrap
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-HEADERS = Fixed.hpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 all: $(NAME)
 

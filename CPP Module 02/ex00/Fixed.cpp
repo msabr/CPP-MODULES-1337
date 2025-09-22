@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:42:43 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/14 22:41:06 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/20 08:47:11 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ int Fixed::getRawBits() const {
 void Fixed::setRawBits(int const raw) {
 	this->rawBits = raw;
 }
-
