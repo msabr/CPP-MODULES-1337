@@ -13,7 +13,7 @@ HEADERS = Fixed.hpp
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 %.o: %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -26,4 +26,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean
+.PHONY: clean fclean re all

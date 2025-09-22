@@ -6,12 +6,11 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:42:43 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/20 08:47:11 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/22 19:28:47 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 const int Fixed::fractionalBits = 8;
 

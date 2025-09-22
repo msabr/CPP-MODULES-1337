@@ -6,15 +6,15 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:37:45 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/14 23:07:48 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/22 19:32:09 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <cmath>
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 	private:
@@ -22,8 +22,8 @@ class Fixed {
 		static const int fractionalBits;
 	public:
 		Fixed(); // Default constructor
-		Fixed(const int intValue); // Constructor from integer
-		Fixed(const float floatValue); // Constructor from float
+		Fixed(const int intValue);
+		Fixed(const float floatValue);
 		Fixed(const Fixed &other); // Copy constructor
 		Fixed &operator=(const Fixed &other); // Copy assignment operator
 		~Fixed(); // Destructor

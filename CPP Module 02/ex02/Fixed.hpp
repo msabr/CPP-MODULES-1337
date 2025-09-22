@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:37:45 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/14 23:43:52 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/22 20:20:52 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Fixed {
 		static const int fractionalBits;
 	public:
 		Fixed(); // Default constructor
-		Fixed(const int intValue); // Constructor from integer
-		Fixed(const float floatValue); // Constructor from float
+		Fixed(const int intValue);
+		Fixed(const float floatValue);
 		Fixed(const Fixed &other); // Copy constructor
 		~Fixed(); // Destructor
 		
@@ -48,14 +48,14 @@ class Fixed {
 		Fixed &operator--();
 		Fixed operator--(int);
 
-		static Fixed &min(Fixed &a, Fixed &b);
-		static const Fixed &min(const Fixed &a, const Fixed &b);
-		static Fixed &max(Fixed &a, Fixed &b);
-		static const Fixed &max(const Fixed &a, const Fixed &b);
-		int		getRawBits() const;
-		void	setRawBits(int const raw);
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(const Fixed &a, const Fixed &b);
+		static Fixed 		&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(const Fixed &a, const Fixed &b);
+		int					getRawBits() const;
+		void				setRawBits(int const raw);
+		float				toFloat( void ) const;
+		int					toInt( void ) const;
 		
 };
 

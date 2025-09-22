@@ -6,12 +6,14 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:37:45 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/14 21:33:59 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/22 19:28:06 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
+#include <iostream>
 
 class Fixed {
 	private:

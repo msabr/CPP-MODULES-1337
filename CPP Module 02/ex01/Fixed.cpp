@@ -6,12 +6,11 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:42:43 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/14 22:40:50 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/22 19:34:40 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 const int Fixed::fractionalBits = 8;
 
@@ -51,11 +50,11 @@ Fixed::Fixed(const int intValue) {
 
 Fixed::Fixed(const float floatValue) {
 	std::cout << "Float constructor called" << std::endl;
-	this->rawBits = static_cast<int>(roundf(floatValue * (1 << fractionalBits)));
+	this->rawBits = int(roundf(floatValue * (1 << fractionalBits)));
 }
 
 float Fixed::toFloat(void) const {
-	return static_cast<float>(this->rawBits) / (1 << fractionalBits);
+	return float(this->rawBits) / (1 << fractionalBits);
 }
 
 int Fixed::toInt(void) const {

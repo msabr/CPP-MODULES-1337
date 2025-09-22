@@ -6,12 +6,11 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:42:43 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/14 23:44:55 by msabr            ###   ########.fr       */
+/*   Updated: 2025/09/22 20:22:20 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 const int Fixed::fractionalBits = 8;
 
@@ -140,10 +139,3 @@ Fixed& Fixed::max(Fixed &a, Fixed &b) {
 const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
 	return (a > b) ? a : b;
 }
-
-
-
-
-
-
-
