@@ -6,11 +6,12 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:42:43 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/22 20:22:20 by msabr            ###   ########.fr       */
+/*   Updated: 2025/10/17 20:02:45 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
 const int Fixed::fractionalBits = 8;
 
@@ -22,7 +23,7 @@ Fixed::Fixed(const int intValue) {
 }
 
 Fixed::Fixed(const float floatValue) {
-	this->rawBits = static_cast<int>(roundf(floatValue * (1 << fractionalBits)));
+	this->rawBits = int(roundf(floatValue * (1 << fractionalBits)));
 }
 
 Fixed::Fixed(const Fixed& other){
@@ -41,7 +42,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-	return static_cast<float>(this->rawBits) / (1 << fractionalBits);
+	return float(this->rawBits) / (1 << fractionalBits);
 }
 
 int Fixed::toInt(void) const {
@@ -102,23 +103,23 @@ Fixed Fixed::operator/(const Fixed &other) const {
 		return Fixed(0);
 }
 
-Fixed& Fixed::operator++() { // Prefix increment
+Fixed& Fixed::operator++() {
 	this->rawBits++;
 	return *this;
 }
 
-Fixed Fixed::operator++(int) { // Postfix increment
+Fixed Fixed::operator++(int) {
 	Fixed temp = *this;
 	this->rawBits++;
 	return temp;
 }
 
-Fixed& Fixed::operator--() { // Prefix decrement
+Fixed& Fixed::operator--() {
 	this->rawBits--;
 	return *this;
 }
 
-Fixed Fixed::operator--(int) { // Postfix decrement
+Fixed Fixed::operator--(int) {
 	Fixed temp = *this;
 	this->rawBits--;
 	return temp;
