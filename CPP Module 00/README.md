@@ -1,4 +1,3 @@
-```markdown
 # C++ Module 00 — Basics: namespaces, classes, streams, initialization lists, static & const
 
 Version: 11.0
@@ -149,6 +148,13 @@ Run ex01:
 cd ex01
 make
 ./phonebook
+```
+
+For ex02 tests (if Makefile names executable `accounts_tests`):
+```
+cd ex02
+make
+./log
 ```
 
 ---
