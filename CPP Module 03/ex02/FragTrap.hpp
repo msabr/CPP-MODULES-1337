@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:26:16 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/20 17:26:28 by msabr            ###   ########.fr       */
+/*   Updated: 2025/11/04 00:50:21 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 class FragTrap : public ClapTrap {
     public:
-        FragTrap(); // Default constructor
-        FragTrap(std::string n); // Parameterized constructor
-        FragTrap(const FragTrap &other); // Copy constructor
-        FragTrap &operator=(const FragTrap &other); // Copy assignment operator
-        ~FragTrap(); // Destructor
+        FragTrap();
+        FragTrap(std::string n);
+        FragTrap(const FragTrap &other);
+        FragTrap &operator=(const FragTrap &other);
+        ~FragTrap();
 
         void highFivesGuys();
 };

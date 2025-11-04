@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:26:16 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/20 17:40:36 by msabr            ###   ########.fr       */
+/*   Updated: 2025/10/25 16:33:16 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
     protected:
         FragTrap(); // Default constructor
         FragTrap(std::string n); // Parameterized constructor

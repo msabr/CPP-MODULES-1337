@@ -6,13 +6,13 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 16:58:58 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/20 16:59:44 by msabr            ###   ########.fr       */
+/*   Updated: 2025/11/04 00:43:35 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() , guardMode(false) {
+ScavTrap::ScavTrap() : ClapTrap(), guardMode(false) {
     this->hitPoints = 100;
     this->energyPoints = 50;
     this->attackDamage = 20;
@@ -26,7 +26,8 @@ ScavTrap::ScavTrap(std::string n) : ClapTrap(n), guardMode(false) {
     std::cout << "ScavTrap Parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other), guardMode(other.guardMode) {
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other){
+    this->guardMode = other.guardMode;
     std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
@@ -48,18 +49,17 @@ void ScavTrap::attack(const std::string &target) {
         energyPoints--;
         std::cout << "ScavTrap " << name << " attacks " << target 
                   << ", causing " << attackDamage << " points of damage!" << std::endl;
-    } else if (hitPoints <= 0) {
-        std::cout << "ScavTrap " << name << " has no hit points left to attack!" << std::endl;
-    } else if (energyPoints <= 0) {
-        std::cout << "ScavTrap " << name << " has no energy points left to attack!" << std::endl;
     }
+    else if (hitPoints <= 0)
+        std::cout << "ScavTrap " << name << " has no hit points left to attack!" << std::endl;
+    else if (energyPoints <= 0)
+        std::cout << "ScavTrap " << name << " has no energy points left to attack!" << std::endl;
 }
 
 void ScavTrap::guardGate() {
     guardMode = !guardMode;
-    if (guardMode) {
+    if (guardMode)
         std::cout << "ScavTrap " << name << " is now in Gate Keeper mode." << std::endl;
-    } else {
+    else
         std::cout << "ScavTrap " << name << " has exited Gate Keeper mode." << std::endl;
-    }
 }

@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:26:34 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/20 17:28:39 by msabr            ###   ########.fr       */
+/*   Updated: 2025/10/25 16:20:46 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ FragTrap::~FragTrap() {
 }
 
 void FragTrap::highFivesGuys() {
-    std::cout << "FragTrap " << name << " is requesting a high five!mk" << std::endl;
+    std::cout << "FragTrap " << name << " is requesting a high five!" << std::endl;
 }

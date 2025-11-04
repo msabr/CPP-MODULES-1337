@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 16:57:47 by msabr             #+#    #+#             */
-/*   Updated: 2025/09/20 17:39:53 by msabr            ###   ########.fr       */
+/*   Updated: 2025/10/25 16:33:09 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	protected:
 		bool guardMode;
 	public:
