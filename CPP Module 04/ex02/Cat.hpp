@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 22:38:20 by msabr             #+#    #+#             */
-/*   Updated: 2025/11/07 01:49:43 by msabr            ###   ########.fr       */
+/*   Created: 2025/11/07 00:21:04 by msabr             #+#    #+#             */
+/*   Updated: 2025/11/07 01:38:07 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-void f()
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal
 {
-	system("leaks Animal");
-}
-int main(void)
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	atexit(f);
-	delete j;//should not create a leak
-	delete i;
+    private:
+        Brain* brain;
+    public:
+        Cat();
+        Cat(const Cat& other);
+        Cat& operator=(const Cat& other);
+        ~Cat();
 
-	return 0;
-}
-	
+        void makeSound() const;
+};
 
-
+#endif

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 22:38:20 by msabr             #+#    #+#             */
-/*   Updated: 2025/11/07 01:49:43 by msabr            ###   ########.fr       */
+/*   Created: 2025/11/07 00:17:23 by msabr             #+#    #+#             */
+/*   Updated: 2025/11/07 00:30:45 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-void f()
+#include <iostream>
+
+class Animal
 {
-	system("leaks Animal");
-}
-int main(void)
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	atexit(f);
-	delete j;//should not create a leak
-	delete i;
+	protected:
+		std::string type;
+	public:
+		Animal();
+		Animal(const Animal& other);
+		Animal& operator=(const Animal& other);
+		virtual ~Animal();
 
-	return 0;
-}
-	
+		std::string getType() const;
+		virtual void makeSound() const;
+};
 
-
+#endif
