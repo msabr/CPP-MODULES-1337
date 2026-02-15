@@ -1,17 +1,15 @@
-NAME = Animal
+NAME = Bureaucrat
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
-SRC =	AMateria.cpp Character.cpp Cure.cpp\
-		Ice.cpp MateriaSource.cpp main.cpp
+SRC = main.cpp \
+		Bureaucrat.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-HEADERS =	AMateria.hpp Character.hpp Cure.hpp\
-			Ice.hpp IMateriaSource.hpp MateriaSource.hpp\
-			ICharacter.hpp
+HEADERS =	Bureaucrat.hpp
 
 all: $(NAME)
 
