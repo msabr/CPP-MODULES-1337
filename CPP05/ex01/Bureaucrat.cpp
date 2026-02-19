@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 15:01:31 by msabr             #+#    #+#             */
-/*   Updated: 2026/02/17 15:42:30 by msabr            ###   ########.fr       */
+/*   Updated: 2026/02/19 21:30:43 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ int Bureaucrat::getGrade() const
     return this->grade;
 }
 
+std::string Bureaucrat::getName() const
+{
+    return this->name;
+}
 
 std::ostream &operator<<(std::ostream &out,const Bureaucrat &other)
 {
@@ -66,4 +70,9 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
     return "Grade too low";
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    form.beSigned(*this);
 }

@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 15:34:13 by msabr             #+#    #+#             */
-/*   Updated: 2026/02/17 15:07:37 by msabr            ###   ########.fr       */
+/*   Updated: 2026/02/19 22:17:05 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,4 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-
-    //normal with argument
-    try
-    {
-        Bureaucrat b("Bureacrat1", 1);
-        std::cout << "parametre Grade: " << b << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    //cas to high
-    try
-    {
-        Bureaucrat b("Bureacrat1", 0);
-        std::cout << "parametre Grade: " << b << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-     //cas to low
-    try
-    {
-        Bureaucrat b("Bureacrat1", 200);
-        std::cout << "parametre Grade: " << b << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    std::cout << "Fin" << std::endl;
-    return 0;
 }
