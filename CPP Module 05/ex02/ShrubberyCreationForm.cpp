@@ -23,9 +23,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw AForm::GradeTooLowException();
 	else
 	{
-		std::ofstream file(this->target + "_shrubbery");
+		std::ofstream file((this->target + "_shrubbery").c_str());
 		if (file.is_open())
 		{
+			file << "            @          " << std::endl;
 			file << "           /\\           " << std::endl;
 			file << "          /**\\          " << std::endl;
 			file << "         /****\\         " << std::endl;
