@@ -25,27 +25,28 @@ Intern::~Intern()
 {
 	std::cout << "Intern destructor called" << std::endl;
 }
-
-AForm* Intern::makeForm(const std::string formName, const std::string target)
+AForm	*Intern::makeForm(const std::string formName, const std::string target)
 {
-	if (formName == "shrubbery creation")
+	std::string	forms[] = {"shrobbery creation", "robotomy request", "presidential pardon"};
+	int i;
+	for (i = 0;forms[i] != formName; i++)
+	if (i >= 3)
 	{
-		std::cout << "Intern creates " << formName << std::endl;
-		return new ShrubberyCreationForm(target);
+		std::cerr << "Invalid form name." << std::endl;
+		return (NULL);
 	}
-	else if (formName == "robotomy request")
+	AForm		*form;
+	switch (i)
 	{
-		std::cout << "Intern creates " << formName << std::endl;
-		return new RobotomyRequestForm(target);
+		case (0):
+			form = new ShrubberyCreationForm(target);
+		case (1):
+			form = new RobotomyRequestForm(target);
+		case (2):
+			form = new PresidentialPardonForm(target);
 	}
-	else if (formName == "presidential pardon")
-	{
-		std::cout << "Intern creates " << formName << std::endl;
-		return new PresidentialPardonForm(target);
-	}
-	else
-	{
-		std::cout << "Error: form name not recognized" << std::endl;
-		return NULL;
-	}
+	std::cout << "Intern created." << std::endl;
+	return (form);
 }
+
+

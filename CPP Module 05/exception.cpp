@@ -1,6 +1,22 @@
 #include <iostream>
 //
 
+class a
+{
+    public:
+        a()
+        {
+            std::cout << "constructor called" << std::endl;
+        }
+        ~a()
+        {
+            std::cout << "destructor called" << std::endl;
+        }
+        a(int a){std::cout << "int\n";}; 
+        a(double a){std::cout << "float\n";};
+        a(char a){std::cout << "char\n";};
+};
+
 int f()
 {
     //stack
@@ -9,15 +25,18 @@ int f()
 }
 int main()
 {
+    // a b('a');
     try
     {
-        int *a = new int[10000000000000000];
+        char *s= "hello";
+        f();
+        // int *a = new int[10000000000000000];
     }
     catch(std::exception &s)
     {
         std::cout << s.what() << std::endl;
     }
-    catch(const char *s)
+    catch( void *s)
     {
         std::cout << s ;
     }
@@ -25,7 +44,7 @@ int main()
     {
         std::cout << s ;
     }
-    catch(float s)
+    catch(char s)
     {
         std::cout << s ;
     }
@@ -33,6 +52,6 @@ int main()
     {
         std::cout << s ;
     }
-    std::cout << "cccccccccccccc" << std::endl;
+    std::cout << "FIN" << std::endl;
     return 0;
 }

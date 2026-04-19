@@ -7,9 +7,9 @@ AForm::AForm(AForm& other):  name(other.name), isSigned(other.isSigned), gradeTo
 AForm::AForm(const std::string n, const int gs, const int ge): name(n), isSigned(false), gradeToSign(gs), gradeToExecute(ge)
 {
 	if (gs > 150 || ge > 150)
-		throw AForm::GradeTooHighException();
-	else if (gs < 1 || ge < 1)
 		throw AForm::GradeTooLowException();
+	else if (gs < 1 || ge < 1)
+		throw AForm::GradeTooHighException();
 }
 
 AForm& AForm::operator=(AForm& other)

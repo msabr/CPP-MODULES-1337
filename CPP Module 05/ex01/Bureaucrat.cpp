@@ -7,9 +7,9 @@ Bureaucrat::Bureaucrat(Bureaucrat& other): name(other.name), grade(other.grade){
 Bureaucrat::Bureaucrat(const std::string n, int g): name(n), grade(g)
 {
 	if (g > 150)
-		throw Bureaucrat::GradeTooHighException();
-	else if (g < 1)
 		throw Bureaucrat::GradeTooLowException();
+	else if (g < 1)
+		throw Bureaucrat::GradeTooHighException();
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat &other)

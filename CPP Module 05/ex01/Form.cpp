@@ -7,9 +7,9 @@ Form::Form(Form& other):  name(other.name), isSigned(other.isSigned), gradeToSig
 Form::Form(const std::string n, const int gs, const int ge): name(n), isSigned(false), gradeToSign(gs), gradeToExecute(ge)
 {
 	if (gs > 150 || ge > 150)
-		throw Form::GradeTooHighException();
-	else if (gs < 1 || ge < 1)
 		throw Form::GradeTooLowException();
+	else if (gs < 1 || ge < 1)
+		throw Form::GradeTooHighException();
 }
 
 Form& Form::operator=(Form& other)
