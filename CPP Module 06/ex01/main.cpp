@@ -1,20 +1,21 @@
-#include "serializer.hpp"
-
-int main() {
-    Data d;
-    d.x = 22;
-    d.c = 'i';
-    d.str = "Forza Napoli";
+#include "Serializer.hpp"
 
 
-    Data* ptr = &d;
+int main(void)
+{
+    Data data = {73, 3.14f, 'A'};
 
-    uintptr_t raw = Serializer::serialize(ptr);
+    std::cout << "Original pointer : " << &data << "\n";
 
-    Data* p = Serializer::deserialize(raw);
+    uintptr_t raw = Serializer::serialize(&data);
+    std::cout << "Serialized (uintptr_t) : " << raw << "\n";
 
-    std::cout << "data values serialized and deserialized : "<< std::endl 
-    << p->x << std::endl
-    << p->c << std::endl
-    << p->str << std::endl;
+    Data *back = Serializer::deserialize(raw);
+    std::cout << "Deserialized ptr : " << back << "\n";
+
+    std::cout << "Pointers match   : " << (back == &data ? "YES" : "NO") << "\n";
+    std::cout << "Data id=" << back->i
+              << " name=" << back->c
+              << " value=" << back->f<< "\n";
+    return 0;
 }

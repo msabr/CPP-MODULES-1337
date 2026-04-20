@@ -1,10 +1,21 @@
 #include "Base.hpp"
 
-int main() {
-    Base* p = generate();
+int main()
+{
+	std::srand(std::time(NULL));
 
-    identify(p);
+	for (int i = 0; i < 6; i++)
+	{
+		Base *obj = generate();
 
-    identify((*p));
+		std::cout << "Via pointer : ";
+		identify(obj);
 
+		std::cout << "Via reference: ";
+		identify(*obj);
+
+		std::cout << "---\n";
+		delete obj;
+	}
+	return 0;
 }

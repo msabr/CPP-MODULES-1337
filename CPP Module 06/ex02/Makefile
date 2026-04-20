@@ -1,28 +1,28 @@
 NAME = Base
 
-CPP = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
 
-INCLUDES = Base.hpp A.hpp B.hpp C.hpp
+SRC = main.cpp Base.cpp
 
-SRCS = main.cpp helpers.cpp
+OBJS = $(SRC:.cpp=.o)
 
-OBJS = $(SRCS:.cpp=.o)
+HEADERS =	Base.hpp
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o: %.cpp $(INCLUDES)
-	$(CPP) $(CFLAGS) -c $< -o $@
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 
-fclean : clean
-	rm -f $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 

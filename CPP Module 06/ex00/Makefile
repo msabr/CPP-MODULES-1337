@@ -1,28 +1,28 @@
-NAME = ScalarConverter
+NAME = convert
 
-CPP = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
 
-INCLUDES = ScalarConverter.hpp
+SRC = main.cpp ScalarConverter.cpp convert.cpp
 
-SRCS = ScalarConverter.cpp main.cpp helpers.cpp
+OBJS = $(SRC:.cpp=.o)
 
-OBJS = $(SRCS:.cpp=.o)
+HEADERS =	ScalarConverter.hpp
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
+		$(CXX) $(CXXFLAGS) $^ -o $@
 
-%.o: %.cpp $(INCLUDES)
-	$(CPP) $(CFLAGS) -c $< -o $@
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 
-fclean : clean
-	rm -f $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 
