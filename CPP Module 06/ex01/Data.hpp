@@ -5,9 +5,8 @@
 
 struct Data
 {
-    int i;
-    float f;
-    char c;
+	int i;
+	char c;
 };
 
 #endif

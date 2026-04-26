@@ -110,7 +110,6 @@ void ScalarConverter::convert(const std::string s)
 {
 	if (isInfi(s))
 		return printInf(s);
-	std::cout << "Input: " << s << std::endl;
 	double d;
 	if (isChar(s))
 		d = static_cast<double>(s[0]);
