@@ -3,18 +3,17 @@
 
 #include <iostream>
 
-template <typename T>
-void iter(T *array, const size_t length, void (*f)(T &))
+template <typename T, typename F>
+void iter(T *array, size_t length, F fun)
 {
-	size_t	i;
-	for (i = 0; i < length; i++)
-		f(array[i]);
+	for (size_t i = 0; i < length; i++)
+		fun(array[i]);
 }
 
 template <typename T>
-void print(T &x)
+void print(T &value)
 {
-	std::cout << x << std::endl;
+	std::cout << value << std::endl;
 }
 
 #endif

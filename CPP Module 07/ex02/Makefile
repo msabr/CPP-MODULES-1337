@@ -8,7 +8,7 @@ SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-HEADERS =	Array.hpp
+HEADERS =	Array.hpp Array.tpp
 
 all: $(NAME)
 

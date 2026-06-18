@@ -1,53 +1,51 @@
-#include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+int main()
 {
-	Array<int> numbers(MAX_VAL);
-	int* mirror = new int[MAX_VAL];
-	srand(time(NULL));
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		const int value = rand();
-		numbers[i] = value;
-		mirror[i] = value;
-	}
-	//SCOPE
-	{
-		Array<int> tmp = numbers;
-		Array<int> test(tmp);
-	}
+	std::cout << "=== Default constructor ===" << std::endl;
+	Array<int> a;
+	std::cout << "a.getSize() = " << a.getSize() << std::endl;
 
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		if (mirror[i] != numbers[i])
-		{
-			std::cerr << "didn't save the same value!!" << std::endl;
-			return 1;
-		}
-	}
+	std::cout << "\n=== Constructor with size ===" << std::endl;
+	Array<int> b(5);
+	std::cout << "b.getSize() = " << b.getSize() << std::endl;
+	for (unsigned int i = 0; i < b.getSize(); ++i)
+		std::cout << "b[" << i << "] = " << b[i] << std::endl;
+
+	std::cout << "\n=== Fill b ===" << std::endl;
+	for (unsigned int i = 0; i < b.getSize(); ++i)
+		b[i] = i * 10;
+	for (unsigned int i = 0; i < b.getSize(); ++i)
+		std::cout << "b[" << i << "] = " << b[i] << std::endl;
+
+	std::cout << "\n=== Copy constructor ===" << std::endl;
+	Array<int> c(b);
+	c[0] = 999;
+	std::cout << "After c[0] = 999:" << std::endl;
+	std::cout << "b[0] = " << b[0] << " (should stay 0)" << std::endl;
+	std::cout << "c[0] = " << c[0] << std::endl;
+
+	std::cout << "\n=== Assignment operator ===" << std::endl;
+	Array<int> d;
+	d = b;
+	d[1] = 555;
+	std::cout << "After d[1] = 555:" << std::endl;
+	std::cout << "b[1] = " << b[1] << " (should stay 10)" << std::endl;
+	std::cout << "d[1] = " << d[1] << std::endl;
+
+	std::cout << "\n=== Out of bounds test ===" << std::endl;
 	try
 	{
-		numbers[-2] = 0;
+		std::cout << b[42] << std::endl;
 	}
-	catch(const std::exception& e)
+	catch (const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		numbers[MAX_VAL] = 0;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		numbers[i] = rand();
-	}
-	delete [] mirror;//
+	std::cout << "\n=== Const operator[] test ===" << std::endl;
+	const Array<int> e(b);
+	std::cout << "e[2] = " << e[2] << std::endl;
+
 	return 0;
 }
