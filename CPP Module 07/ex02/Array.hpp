@@ -8,7 +8,7 @@ class Array
 {
 	private:
 		T*				array;
-		unsigned int	size;
+		unsigned int	_size;
 	public:
 		Array();
 		Array(unsigned int n);
@@ -19,12 +19,12 @@ class Array
 		T& operator[](unsigned int index);
 		const T& operator[](unsigned int index) const;
 
-		unsigned int getSize() const;
+		unsigned int size() const;
 
 		class OutOfBoundsException : public std::exception
 		{
-		public:
-			virtual const char* what() const throw();
+			public:
+				virtual const char* what() const throw();
 		};
 };
 
