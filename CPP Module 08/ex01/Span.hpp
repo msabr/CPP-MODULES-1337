@@ -10,7 +10,10 @@ class Span {
 		std::vector<int> numbers;
 		unsigned int maxSize;
 	public:
+		Span();
 		Span(unsigned int n);
+		Span(const Span &other);
+		Span &operator=(const Span &other);
 		void addNumber(int number);
 		unsigned int shortestSpan() const;
 		unsigned int longestSpan() const;
@@ -18,7 +21,9 @@ class Span {
 		void addNumbers(T first, T last) {
 			if (std::distance(first, last) + numbers.size() > maxSize)
 				throw std::runtime_error("Exceeding maximum size");
-			numbers.insert(numbers.end(), first, last);
+			for (T it = first; it != last; ++it) {
+				numbers.push_back(*it);
+			}
 		}
 };
 
