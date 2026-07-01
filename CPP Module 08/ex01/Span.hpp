@@ -25,6 +25,7 @@ class Span {
 				numbers.push_back(*it);
 			}
 		}
+		~Span();
 };
 
 #endif

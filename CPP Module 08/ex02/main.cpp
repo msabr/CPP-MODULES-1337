@@ -1,8 +1,10 @@
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
-	std::cout << "===== MutantStack Test =====" << std::endl;
+	std::cout << "========== Basic Test ==========\n";
+
 	MutantStack<int> mstack;
 
 	mstack.push(5);
@@ -11,7 +13,8 @@ int main()
 	std::cout << "Top: " << mstack.top() << std::endl;
 
 	mstack.pop();
-	std::cout << "Size after pop: " << mstack.size() << std::endl;
+
+	std::cout << "Size: " << mstack.size() << std::endl;
 
 	mstack.push(3);
 	mstack.push(5);
@@ -19,7 +22,7 @@ int main()
 	mstack.push(42);
 	mstack.push(0);
 
-	std::cout << "\nContents:" << std::endl;
+	std::cout << "\nElements:" << std::endl;
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -27,15 +30,46 @@ int main()
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
-		it++;
+		++it;
 	}
 
-	std::cout << "\nCopy constructor test:" << std::endl;
+	std::cout << "\n========== Copy Constructor ==========\n";
 
-	std::stack<int> s(mstack);
+	MutantStack<int> copy(mstack);
 
-	std::cout << "Stack size: " << s.size() << std::endl;
-	std::cout << "Stack top : " << s.top() << std::endl;
+	it = copy.begin();
+	ite = copy.end();
 
-	return 0;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+
+	std::cout << "\n========== Assignment Operator ==========\n";
+
+	MutantStack<int> assign;
+
+	assign.push(100);
+	assign.push(200);
+
+	assign = mstack;
+
+	it = assign.begin();
+	ite = assign.end();
+
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+
+	std::cout << "\n========== Empty Stack ==========\n";
+
+	MutantStack<int> empty;
+
+	std::cout << "empty(): " << empty.empty() << std::endl;
+	std::cout << "size(): " << empty.size() << std::endl;
+
+	return (0);
 }

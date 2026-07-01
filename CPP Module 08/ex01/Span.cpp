@@ -27,7 +27,7 @@ unsigned int Span::shortestSpan() const {
 	std::sort(sortedNumbers.begin(), sortedNumbers.end());
 	
 	unsigned int minSpan = 2147483647;
-	for (size_t i = 0; i < sortedNumbers.size(); i++) {
+	for (size_t i = 1; i < sortedNumbers.size(); i++) {
 		unsigned int span = sortedNumbers[i] - sortedNumbers[i - 1];
 		if (span < minSpan)
 			minSpan = span;
@@ -42,3 +42,5 @@ unsigned int Span::longestSpan() const {
 	unsigned int max = *std::max_element(numbers.begin(), numbers.end());
 	return max - min;
 }
+
+Span::~Span() {}
