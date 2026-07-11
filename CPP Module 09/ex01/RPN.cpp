@@ -22,9 +22,9 @@ int RPN::evaluate(const std::string &expression)
 	for (size_t i = 0; i < expression.length(); i++)
 	{
 		char c = expression[i];
-		if (std::isdigit(c))
+		if (std::isdigit(c) && (std::isspace(expression[i + 1]) || i + 1 == expression.length()))
 			_stack.push(c - '0');
-		else if (isValidOperator(c))
+		else if (isValidOperator(c) && (std::isspace(expression[i + 1]) || i + 1 == expression.length()))
 		{
 			if (_stack.size() < 2)
 				throw std::runtime_error("Invalid RPN expression");

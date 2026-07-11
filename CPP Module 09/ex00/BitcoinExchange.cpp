@@ -139,7 +139,11 @@ void BitcoinExchange::Exchange(const std::string &filename)
 	std::string datestr;
 	std::string valueStr;
 	std::getline(file, line);
-
+	if (!splitpipe(line, datestr, valueStr) || datestr != "date" || valueStr != "value")
+	{
+		std::cout << "Error: bad input => " << line << std::endl;
+		return;
+	}
 	while (std::getline(file, line))
 	{
 		if (line.empty())
