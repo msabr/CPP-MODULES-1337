@@ -4,11 +4,11 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
-SRC = 
+SRC = BitcoinExchange.cpp main.cpp validDate.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-HEADERS =	whatever.hpp
+HEADERS =	BitcoinExchange.hpp
 
 all: $(NAME)
 
