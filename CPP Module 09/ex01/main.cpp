@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:52:44 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 17:52:45 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/18 19:51:44 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		int result = rpn.evaluate(argv[1]);
 		std::cout << result << std::endl;
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 		return 1;

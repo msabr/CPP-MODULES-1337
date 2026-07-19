@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:52:41 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 17:52:42 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/18 19:51:34 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		bitcoine.loadDatabase("data.csv");
 		bitcoine.Exchange(argv[1]);
 	}
-	catch (const std::exception &e)
+	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 		return 1;

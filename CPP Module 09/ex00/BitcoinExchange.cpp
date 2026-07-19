@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:52:36 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 17:52:37 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/18 19:51:10 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ static int count_char(std::string &str, char c)
 	return count;
 }
 
-static std::string ft_strtrim(const std::string &s)
+static std::string ft_strtrim(std::string &s)
 {
 	size_t start = s.find_first_not_of(" \t\r\n");
 	if (start == std::string::npos)

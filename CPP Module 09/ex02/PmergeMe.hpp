@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:53:06 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 17:53:07 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/19 14:23:57 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ private:
 	std::vector<int> _vec;
 	std::deque<int> _deq;
 
-	std::vector<int> fordJohnsonVector(const std::vector<int>& input) const;
-	std::deque<int> fordJohnsonDeque(const std::deque<int>& input) const;
+	std::vector<int> fordJohnsonVector(std::vector<int> input);
+	std::deque<int> fordJohnsonDeque(std::deque<int> input);
 public:
 	PmergeMe();
 	PmergeMe(const PmergeMe& other);

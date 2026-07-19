@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:53:00 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 17:57:11 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/18 19:52:04 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 		pmerge.loadData(argc, argv);
 		pmerge.process();
 	}
-	catch (const std::exception& e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 		return 1;
