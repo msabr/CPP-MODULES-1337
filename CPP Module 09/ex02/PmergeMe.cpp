@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:59:33 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/19 15:05:17 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/21 13:51:39 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,19 @@ std::vector<int> Jacobsthal(int n) {
 	std::vector<int> jac;
 	jac.push_back(0);
 	jac.push_back(1);
-	while (jac.back() < n) {
+	while (jac.back() < n)
+	{
 		int m = jac.size();
 		jac.push_back(jac[m - 1] + 2 * jac[m - 2]);
 	}
 
 	order.push_back(0);
 
-	for (size_t k = 2; k < jac.size(); ++k) {
-		for (int i = jac[k] - 1; i >= jac[k - 1]; --i) {
-			if (i < n) order.push_back(i);
+	for (size_t k = 2; k < jac.size(); k++) {
+		for (int i = jac[k] - 1; i >= jac[k - 1]; i--)
+		{
+			if (i < n)
+				order.push_back(i);
 		}
 	}
 
