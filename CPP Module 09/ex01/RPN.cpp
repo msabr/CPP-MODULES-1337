@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:52:47 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 17:52:48 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/25 19:15:04 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,18 @@ int RPN::evaluate(const std::string &expression)
 			switch (c)
 			{
 				case '+':
+					if (a + b > INT_MAX || a + b < INT_MIN)
+						throw std::runtime_error("Integer Overflow");
 					_stack.push(a + b);
 					break;
 				case '-':
+					if (a - b < INT_MIN || a - b > INT_MAX)
+						throw std::runtime_error("Integer Underflow");
 					_stack.push(a - b);
 					break;
 				case '*':
+					if (a * b > INT_MAX || a * b < INT_MIN)
+						throw std::runtime_error("Integer Overflow");
 					_stack.push(a * b);
 					break;
 				case '/':

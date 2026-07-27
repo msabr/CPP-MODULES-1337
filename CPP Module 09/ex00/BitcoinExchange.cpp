@@ -6,7 +6,7 @@
 /*   By: msabr <msabr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/18 17:52:36 by msabr             #+#    #+#             */
-/*   Updated: 2026/07/18 19:51:10 by msabr            ###   ########.fr       */
+/*   Updated: 2026/07/25 17:44:42 by msabr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) : db(other.db) {}
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 {
-	if (this != &other)
-		db = other.db;
+	db = other.db;
 	return *this;
 }
 
@@ -118,7 +117,7 @@ static int count_char(std::string &str, char c)
 	return count;
 }
 
-static std::string ft_strtrim(std::string &s)
+static std::string ft_strtrim(const std::string &s)
 {
 	size_t start = s.find_first_not_of(" \t\r\n");
 	if (start == std::string::npos)
@@ -129,9 +128,9 @@ static std::string ft_strtrim(std::string &s)
 
 static bool splitpipe(std::string &line, std::string &datestr, std::string &valueStr)
 {
-	size_t pipePos = line.find('|');
 	if (count_char(line, '|') != 1)
 		return false;
+	size_t pipePos = line.find('|');
 	if (pipePos == std::string::npos)
 		return false;
 	datestr = ft_strtrim(line.substr(0, pipePos));
