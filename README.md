@@ -1,4 +1,7 @@
 # CPP-MODULES-1337
+<div align="center">
+<img src="CPP Modules.png" with="600"/>
+</div>
 
 Global repository README for the 42 School **C++ Modules** curriculum (Modules 00–09), covering the transition from C to C++ and core object-oriented programming concepts, from basic classes all the way to STL containers and algorithms.
 
