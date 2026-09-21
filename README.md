@@ -1,17 +1,18 @@
 # CPP-MODULES-1337
+
 <div align="center">
-<img src="CPP Modules.png" with="600"/>
+  <img src="CPP%20Modules.png" alt="42 C++ Modules"/>
 </div>
 
 Global repository README for the 42 School **C++ Modules** curriculum (Modules 00–09), covering the transition from C to C++ and core object-oriented programming concepts, from basic classes all the way to STL containers and algorithms.
 
 ## Overview
 
-This repository contains all ten C++ modules of the 42 common core. Each `CPP Module NN` folder holds the exercise subject (`en.subject.pdf`), a module-level `README.md` / `readme.md`, and one `exNN` folder per exercise with its own sources, headers, and `Makefile`.
+This repository contains all ten C++ modules of the 42 common core. Each `CPP Module NN` folder holds a module-level `README.md` / `readme.md` and one `exNN` folder per exercise with its own sources, headers, and `Makefile`. Modules 00–04 also include the official subject PDF (`en.subject.pdf`).
 
 ## Repository layout
 
-```
+```text
 CPP-MODULES-1337/
 ├── CPP Module 00/   # Namespaces, classes, member functions, stdio streams, init lists
 │   ├── ex00 - megaphone.cpp
@@ -65,18 +66,16 @@ CPP-MODULES-1337/
 
 Each module has its own README with exercise-specific details:
 
-- [CPP Module 00](<CPP Module 00>/README.md)
-- [CPP Module 01](<CPP Module 01>/README.md)
-- [CPP Module 02](<CPP Module 02>/README.md)
-- [CPP Module 03](<CPP Module 03>/README.md)
-- [CPP Module 04](<CPP Module 04>/README.md)
-- [CPP Module 05](<CPP Module 05>/readme.md)
-- [CPP Module 06](<CPP Module 06>/readme.md)
-- [CPP Module 07](<CPP Module 07>/readme.md)
-- [CPP Module 08](<CPP Module 08>/readme.md)
-- [CPP Module 09](<CPP Module 09>/readme.md)
-
-Modules 00–04 also include the official subject PDF (`en.subject.pdf`) alongside the exercises.
+- [CPP Module 00](CPP%20Module%2000/README.md)
+- [CPP Module 01](CPP%20Module%2001/README.md)
+- [CPP Module 02](CPP%20Module%2002/README.md)
+- [CPP Module 03](CPP%20Module%2003/README.md)
+- [CPP Module 04](CPP%20Module%2004/README.md)
+- [CPP Module 05](CPP%20Module%2005/readme.md)
+- [CPP Module 06](CPP%20Module%2006/readme.md)
+- [CPP Module 07](CPP%20Module%2007/readme.md)
+- [CPP Module 08](CPP%20Module%2008/readme.md)
+- [CPP Module 09](CPP%20Module%2009/readme.md)
 
 ## Build and run
 
@@ -90,18 +89,18 @@ make
 
 Common Makefile targets:
 
-| Target        | Description                             |
-|---------------|-------------------------------------------|
-| `make`        | Compile the exercise                       |
-| `make clean`  | Remove object files                        |
-| `make fclean` | Remove object files and the executable     |
-| `make re`     | `fclean` + `make` (full rebuild)           |
+| Target        | Description                            |
+|---------------|----------------------------------------|
+| `make`        | Compile the exercise                   |
+| `make clean`  | Remove object files                    |
+| `make fclean` | Remove object files and the executable |
+| `make re`     | `fclean` + `make` (full rebuild)       |
 
 ## Coding standards
 
-- Target language standard: **C++98**, as required by the 42 curriculum.
-- Compilation flags: `-Wall -Wextra -Werror`.
-- Code follows the 42 Norm where applicable.
+- Target language standard: **C++98**, as required by the 42 curriculum (`-std=c++98`).
+- Compilation flags: `-Wall -Wextra -Werror -std=c++98`.
+- Conventions follow the subjects: `UpperCamelCase` class names, one header/source pair per class, protected headers, and the Orthodox Canonical Form from Module 02 onward.
 
 ## Getting started
 
